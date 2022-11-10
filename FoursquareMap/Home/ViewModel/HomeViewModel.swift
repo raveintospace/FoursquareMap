@@ -23,16 +23,16 @@ class HomeViewModel {
     
     func getListOfVenues() {
         managerConnections
-            .getVenues()
+            .getVenues()        // obtain data from MC
             .subscribe(onSuccess: { [weak self] venues in
-                self?.venues.accept(venues)
+                self?.venues.accept(venues)         // add the data to let venues
             }, onFailure: { error in
                 print(error)
             })
             .disposed(by: disposeBag)
     }
     
-    var venueList: Driver<[Venue]> {
+    var venueList: Driver<[Venue]> {    // push the data to main thread
         venues.asDriver()
     }
 }
