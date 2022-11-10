@@ -12,10 +12,12 @@
 		340BC34A291D05EF00CD0287 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC349291D05EF00CD0287 /* SceneDelegate.swift */; };
 		340BC351291D05F100CD0287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340BC350291D05F100CD0287 /* Assets.xcassets */; };
 		340BC354291D05F100CD0287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340BC352291D05F100CD0287 /* LaunchScreen.storyboard */; };
-		340BC361291D078B00CD0287 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC360291D078B00CD0287 /* POI.swift */; };
+		340BC361291D078B00CD0287 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC360291D078B00CD0287 /* Venue.swift */; };
 		340BC363291D07FF00CD0287 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC362291D07FF00CD0287 /* HomeView.swift */; };
 		340BC365291D082700CD0287 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC364291D082700CD0287 /* HomeViewModel.swift */; };
 		340BC367291D085D00CD0287 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC366291D085D00CD0287 /* HomeRouter.swift */; };
+		340BC36A291D1A5800CD0287 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC369291D1A5800CD0287 /* Constants.swift */; };
+		340BC36D291D398900CD0287 /* ManagerConnections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340BC36C291D398900CD0287 /* ManagerConnections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +27,12 @@
 		340BC350291D05F100CD0287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		340BC353291D05F100CD0287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		340BC355291D05F100CD0287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		340BC360291D078B00CD0287 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
+		340BC360291D078B00CD0287 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		340BC362291D07FF00CD0287 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		340BC364291D082700CD0287 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		340BC366291D085D00CD0287 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		340BC369291D1A5800CD0287 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		340BC36C291D398900CD0287 /* ManagerConnections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerConnections.swift; sourceTree = "<group>"; };
 		5130C424FF50AF43DA7E5D3C /* Pods_FoursquareMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoursquareMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FCC19502EDA6B96EF35520 /* Pods-FoursquareMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareMap.debug.xcconfig"; path = "Target Support Files/Pods-FoursquareMap/Pods-FoursquareMap.debug.xcconfig"; sourceTree = "<group>"; };
 		F4B4378DF1B7AA5BA7F62E8C /* Pods-FoursquareMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoursquareMap.release.xcconfig"; path = "Target Support Files/Pods-FoursquareMap/Pods-FoursquareMap.release.xcconfig"; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				340BC346291D05EF00CD0287 /* FoursquareMap */,
+				340BC368291D1A4300CD0287 /* Resources */,
+				340BC36B291D396800CD0287 /* NetworkManager */,
 				340BC345291D05EF00CD0287 /* Products */,
 				C9988EF62F50D1BC764546AF /* Pods */,
 				3CB4FF3E250913DED24451C5 /* Frameworks */,
@@ -91,7 +97,7 @@
 		340BC35C291D071E00CD0287 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				340BC360291D078B00CD0287 /* POI.swift */,
+				340BC360291D078B00CD0287 /* Venue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,6 +126,22 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		340BC368291D1A4300CD0287 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				340BC369291D1A5800CD0287 /* Constants.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		340BC36B291D396800CD0287 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				340BC36C291D398900CD0287 /* ManagerConnections.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		3CB4FF3E250913DED24451C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +156,6 @@
 				D0FCC19502EDA6B96EF35520 /* Pods-FoursquareMap.debug.xcconfig */,
 				F4B4378DF1B7AA5BA7F62E8C /* Pods-FoursquareMap.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -252,10 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				340BC361291D078B00CD0287 /* POI.swift in Sources */,
+				340BC361291D078B00CD0287 /* Venue.swift in Sources */,
+				340BC36D291D398900CD0287 /* ManagerConnections.swift in Sources */,
 				340BC365291D082700CD0287 /* HomeViewModel.swift in Sources */,
 				340BC367291D085D00CD0287 /* HomeRouter.swift in Sources */,
 				340BC348291D05EF00CD0287 /* AppDelegate.swift in Sources */,
+				340BC36A291D1A5800CD0287 /* Constants.swift in Sources */,
 				340BC363291D07FF00CD0287 /* HomeView.swift in Sources */,
 				340BC34A291D05EF00CD0287 /* SceneDelegate.swift in Sources */,
 			);

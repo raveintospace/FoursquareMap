@@ -6,15 +6,33 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
+import RxCocoa
 
 class HomeViewModel {
-    private weak var view: HomeView?    // weak so everytime a new HomeView is created deletes the previous one
     private var router: HomeRouter?
-    //private var managerConnections = ManagerConnections()   // to instantiate our ManagerConnections swift file
+    private var managerConnections = ManagerConnections()   // to instantiate our ManagerConnections swift file
+    private var disposeBag = DisposeBag()
+    private let venues = BehaviorRelay<[Venue]>(value: [])
     
     func bind(view: HomeView, router: HomeRouter) {
-        self.view = view
         self.router = router
         self.router?.setSourceView(view)    // bind our view with our router
+    }
+    
+    func getListOfVenues() {
+        managerConnections
+            .getVenues()
+            .subscribe(onSuccess: { [weak self] venues in
+                self?.venues.accept(venues)
+            }, onFailure: { error in
+                print(error)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    var venueList: Driver<[Venue]> {
+        venues.asDriver()
     }
 }
